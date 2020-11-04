@@ -4,17 +4,19 @@ import datetime
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import AbstractUser
-
+from django.contrib.auth.models import User
 
 # Create your models here.
-class User(AbstractUser):
-    pass
+# class CustomUser(AbstractUser):
+#     pass
 
 class Contents(models.Model):
-    post_user = models.ForeignKey(AbstractUser.username,on_delete=models.CASCADE)
-    post_id = models.IntegerField()
-    create_time = models.DateTimeField('user created')
-    content = models.CharField(max_length=1000)
+    post_id = models.AutoField(primary_key=True)
+    author = models.ForeignKey(
+        User, on_delete=models.SET_NULL, null=True)
+    picture = models.ImageField(
+        upload_to="image/posts/", blank=True, null=True)
+    content = models.TextField(blank=True)
 
     def __str__(self):
         return self.content
