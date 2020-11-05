@@ -7,8 +7,8 @@ from django.contrib.auth.models import AbstractUser
 from django.contrib.auth.models import User
 
 # Create your models here.
-# class CustomUser(AbstractUser):
-#     pass
+class User(AbstractUser):
+    pass
 
 class Contents(models.Model):
     post_id = models.AutoField(primary_key=True)
