@@ -4,13 +4,13 @@ import datetime
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import AbstractUser
-from django.contrib.auth.models import User
+# from django.contrib.auth.models import User
 
 # Create your models here.
 class User(AbstractUser):
     pass
 
-class Contents(models.Model):
+class Content(models.Model):
     post_id = models.AutoField(primary_key=True)
     author = models.ForeignKey(
         User, on_delete=models.SET_NULL, null=True)
