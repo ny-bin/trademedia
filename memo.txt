@@ -1,0 +1,10 @@
+python file 設定
+https://www.techpit.jp/courses/27/curriculums/28/sections/241/parts/835
+上記参照
+
+python manage.py startapp account で新しいappを作成
+settings.py の設定変更（済み）
+form.pyの設定
+
+ウィジェットの説明
+https://docs.djangoproject.com/ja/2.2/ref/forms/widgets/

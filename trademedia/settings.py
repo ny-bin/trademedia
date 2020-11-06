@@ -45,6 +45,9 @@ INSTALLED_APPS = [
 # Application definition
 AUTH_USER_MODEL = 'media.User'
 
+LOGIN_URL = '/login' 
+LOGIN_REDIRECT_URL = '/pdfmr/top'
+LOGOUT_REDIRECT_URL='/login'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
