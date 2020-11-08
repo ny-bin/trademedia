@@ -19,5 +19,6 @@ from django.urls import path,include
 urlpatterns = [
     path('media/',include('media.urls')),
     path('chart/',include('chart.urls')),
+    path('login/',include('loginauth.urls')),
     path('admin/', admin.site.urls),
 ]

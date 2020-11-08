@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'media',
-    # 'media.app.MediaConfig',
+    'loginauth',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,7 +43,7 @@ INSTALLED_APPS = [
 
 
 # Application definition
-AUTH_USER_MODEL = 'media.User'
+AUTH_USER_MODEL = 'loginauth.User'
 
 LOGIN_URL = '/login' 
 LOGIN_REDIRECT_URL = '/pdfmr/top'
