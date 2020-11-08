@@ -1,0 +1,20 @@
+<html>
+<body>
+  <form action="/create_user" method="post">
+    {% csrf_token %}
+    <div>
+      <label for="user_name">user name</label>
+      <input type="text" id="user_name" name="user_name">
+    </div>
+    <div>
+      <label for="email">メールアドレス</label>
+      <input type="mail" id="email" name="email">
+    </div>
+    <div>
+      <label for="password"></label>
+      <textarea id="password" name="password">{{ password }}</textarea>
+    </div>
+    <input type="submit" value="送信する">
+  </form>
+</body>
+</html>
