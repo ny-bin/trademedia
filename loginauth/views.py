@@ -17,3 +17,6 @@ class Logout(LoginRequiredMixin, LogoutView):
     """ログアウトページ"""
     template_name = 'loginauth/login.html'
 # ここまで追加
+
+class Create_User():
+    pass

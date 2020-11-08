@@ -1,10 +1,11 @@
 from django.urls import path
-from loginauth import views
+from . import views
 
 app_name ='loginauth'
 
 urlpatterns =[
     path('login/', views.Login.as_view(), name='login'),
     path('logout/', views.Logout.as_view(), name='logout'),
+    path('create_user/',views.Create_User(),name ='create_user')
 ]
       
