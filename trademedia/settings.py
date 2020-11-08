@@ -46,7 +46,7 @@ INSTALLED_APPS = [
 AUTH_USER_MODEL = 'loginauth.User'
 
 LOGIN_URL = '/login' 
-LOGIN_REDIRECT_URL = '/pdfmr/top'
+LOGIN_REDIRECT_URL = '/media'
 LOGOUT_REDIRECT_URL='/login'
 
 MIDDLEWARE = [
