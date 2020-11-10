@@ -1,73 +1,71 @@
-<html>
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <title>Froala Design Blocks</title>
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0" />
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+  <link type="text/css" rel="stylesheet" href="./css/froala_blocks.css">
+
+</head>
 
 <body>
-    <form action="{%url 'loginauth:create_user' %}" method="post">
-        {% csrf_token %}
-        <div>
-            <label for="username">user name</label>
-            <input type="text" id="username" name="username">
-        </div>
-        <div>
-            <label for="email">メールアドレス</label>
-            <input type="mail" id="email" name="email">
-        </div>
-        <div>
-            <label for="password1">password</label>
-            <input type = "password1" id="password1" name="password1">
-            <label for="password2">password確認</label>
-            <input type = "password2" id="password2" name="password2">
-        </div>
-        <button type="submit" >登録</button>
-    </form>
-</body>
-
-</html>
-
- <!-- Forms 6 -->
- <section class="fdb-block">
+  <!-- Forms 6 -->
+  <section class="fdb-block">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-12 col-md-8 col-lg-8 col-xl-6">
           <div class="row">
             <div class="col text-center">
               <h1>Sign Up</h1>
-              <p class="lead">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia. </p>
+              <p class="lead">サイトへようこそ。</p>
+              <p>アカウントを持っていない方は作成してください。</p>
+
             </div>
           </div>
-          <div class="row align-items-center">
-            <form>
-            <div class="col mt-4">
-              <input type="text" class="form-control" name = "username" placeholder="User Name">
+          <form action=" {%url 'loginauth:create_user' %}" method="post">
+            {% csrf_token %}
+            <div class="row align-items-center">
+              <div class="col mt-4">
+                <input type="text" class="form-control" name="username" placeholder="User Name">
+              </div>
             </div>
-          </div>
-          <div class="row align-items-center mt-4">
-            <div class="col">
-              <input type="email" class="form-control" name = "email" placeholder="Email">
+            <div class="row align-items-center mt-4">
+              <div class="col">
+                <input type="email" class="form-control" name="email" placeholder="Email">
+              </div>
             </div>
-          </div>
-          <div class="row align-items-center mt-4">
-            <div class="col">
-              <input type="password" class="form-control" name = "password1" placeholder="Password">
+            <div class="row align-items-center mt-4">
+              <div class="col">
+                <input type="password" class="form-control" name="password1" placeholder="Password">
+              </div>
+              <div class="col">
+                <input type="password" class="form-control" name="password2" placeholder="Confirm Password">
+              </div>
             </div>
-            <div class="col">
-              <input type="password" class="form-control" name = "password2" placeholder="Confirm Password">
-            </div>
-          </div>
-        </form>
-        
+            <button type = "submit" class="btn btn-primary mt-4">Submit</button>
+          </form>
           <div class="row justify-content-start mt-4">
             <div class="col">
               <div class="form-check">
                 <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input">
-                    I Read and Accept <a href="https://www.froala.com">Terms and Conditions</a>
-                  </label>
+                  <input type="checkbox" class="form-check-input">
+                  I Read and Accept <a href="https://www.froala.com">Terms and Conditions</a>
+                </label>
               </div>
-  
-              <button class="btn btn-primary mt-4">Submit</button>
+
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+</body>
+
+</html>
