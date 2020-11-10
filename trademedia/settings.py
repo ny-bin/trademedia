@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -32,19 +33,24 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'media',
-    # 'media.app.MediaConfig',
+    'loginauth',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'bootstrap4',  # 追加
+    'widget_tweaks',
 ]
 
 
 # Application definition
-AUTH_USER_MODEL = 'media.User'
+AUTH_USER_MODEL = 'loginauth.User'
 
+LOGIN_URL = '/login'
+LOGIN_REDIRECT_URL = '/media'
+LOGOUT_REDIRECT_URL = '/login'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -61,7 +67,7 @@ ROOT_URLCONF = 'trademedia.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],  
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -81,11 +87,11 @@ WSGI_APPLICATION = 'trademedia.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-       'default': {
-        'ENGINE': 'django.db.backends.mysql', # 変更
-        'NAME': 'trademedia', # プロジェクトで使用するデータベース名
-        'USER': 'root', # パソコンにインストールしたMySQLのユーザー名
-        'PASSWORD': 'yuto1210', # 同上。そのパスワード
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',  # 変更
+        'NAME': 'trademedia',  # プロジェクトで使用するデータベース名
+        'USER': 'root',  # パソコンにインストールしたMySQLのユーザー名
+        'PASSWORD': 'yuto1210',  # 同上。そのパスワード
     }
 }
 
@@ -112,7 +118,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ja'
 
 TIME_ZONE = 'Asia/Tokyo'
 

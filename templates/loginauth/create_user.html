@@ -1,0 +1,24 @@
+<html>
+
+<body>
+    <form action="{%url 'loginauth:create_user' %}" method="post">
+        {% csrf_token %}
+        <div>
+            <label for="username">user name</label>
+            <input type="text" id="username" name="username">
+        </div>
+        <div>
+            <label for="email">メールアドレス</label>
+            <input type="mail" id="email" name="email">
+        </div>
+        <div>
+            <label for="password1">password</label>
+            <input type = "password1" id="password1" name="password1">
+            <label for="password2">password確認</label>
+            <input type = "password2" id="password2" name="password2">
+        </div>
+        <button type="submit" >登録</button>
+    </form>
+</body>
+
+</html>
