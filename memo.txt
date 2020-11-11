@@ -9,3 +9,23 @@ form.pyの設定
 ウィジェットの説明
 https://docs.djangoproject.com/ja/2.2/ref/forms/widgets/
 https://qiita.com/knakajima3027/items/34b2a105da7cdb411736
+
+
+<!DOCTYPE html>
+<html lang="ja">
+  <body>
+    {% if form.errors  %}
+    <p>ユーザーID, パスワードが一致しません．</p>
+    {% endif %}
+    <form method="POST" action="{% url 'loginauth:login' %}">
+      {% csrf_token %}
+      <label>ユーザーID</label>
+      {{ form.username }}
+      {{ form.username.errors }}
+      <label>パスワード</label>
+      {{ form.password }}
+      {{ form.password.errors }}
+      <button type = "submit">ログイン</button>
+    </form>
+  </body>
+</html>
