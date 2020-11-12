@@ -3,6 +3,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import (LoginView, LogoutView)
 from django.contrib.auth import login, authenticate
 from django.views.generic import CreateView
+from django.shortcuts import redirect
 from loginauth.forms import LoginForm
 from .models import User
 from .forms import UserCreateForm
@@ -31,4 +32,6 @@ def signup(request):
         return redirect('/login')
     return render(request, 'loginauth/create_user.html')
 
-
+def redirect_view(request):
+    response = redirect('/login')
+    return response
