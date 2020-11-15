@@ -12,6 +12,9 @@
     <p>{{ object.content }}</p>
     <p>Reporter: {{ username }}</p>
     <p>Published: {{ object.published_date }}</p>
+    <!-- <p>{{object.picture }}</p> -->
+    <!-- <p>{{MEDIA_URL}}</p> -->
+    <img src="{{MEDIA_URL}}{{object.picture}}" width="200">
 </body>
 
 </html>
